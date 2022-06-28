@@ -2,7 +2,15 @@ function checkUrl() {
 	console.log("start");
     CurrentUrl = window.location.href;
 	var Temp_current_url = CurrentUrl;
-	console.log(CurrentUrl);
+    const url = CurrentUrl.split("/")
+    var collection = ""
+    for(var i = 0; i < url.length; i++){
+        if(url[i]=="collection"){
+            collection = url[i+1]
+            console.log(collection);
+        }
+       
+    }
     if (CurrentUrl != Temp_current_url && Temp_current_url != undefined) {
 		
         $('#feedDiv').remove();
@@ -22,7 +30,7 @@ function checkUrl() {
 		
       
     }
-    return  CurrentUrl
+    return  collection
 }
 
 function getCollection(){
